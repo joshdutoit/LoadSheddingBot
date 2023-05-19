@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordLoadsheddingApi", "DiscordLoadsheddingApi\DiscordLoadsheddingApi.csproj", "{410F1384-4053-4712-AF99-847C73A312A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{D8FC87B0-0CA1-43DE-A9BC-049CA2C28DDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadsheddingDiscordBot", "LoadsheddingDiscordBot\LoadsheddingDiscordBot.csproj", "{B231DBC3-7F87-4CD5-B66D-4B58374C6E9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{410F1384-4053-4712-AF99-847C73A312A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410F1384-4053-4712-AF99-847C73A312A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410F1384-4053-4712-AF99-847C73A312A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410F1384-4053-4712-AF99-847C73A312A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8FC87B0-0CA1-43DE-A9BC-049CA2C28DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8FC87B0-0CA1-43DE-A9BC-049CA2C28DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8FC87B0-0CA1-43DE-A9BC-049CA2C28DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8FC87B0-0CA1-43DE-A9BC-049CA2C28DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B231DBC3-7F87-4CD5-B66D-4B58374C6E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B231DBC3-7F87-4CD5-B66D-4B58374C6E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B231DBC3-7F87-4CD5-B66D-4B58374C6E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B231DBC3-7F87-4CD5-B66D-4B58374C6E9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
