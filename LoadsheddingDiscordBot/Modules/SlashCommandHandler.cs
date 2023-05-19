@@ -1,8 +1,13 @@
 ﻿using System.Reflection;
+using Discord;
 using Discord.Commands;
 using Discord.Interactions;
+using Discord.Interactions.Builders;
+using Discord.Net;
 using Discord.WebSocket;
+using Newtonsoft.Json;
 using IResult = Discord.Interactions.IResult;
+using SlashCommandBuilder = Discord.Interactions.Builders.SlashCommandBuilder;
 
 namespace LoadsheddingDiscordBot.Modules;
 
@@ -31,7 +36,7 @@ public class SlashCommandHandler : ModuleBase<SocketCommandContext>
         _commands.ContextCommandExecuted += ContextCommandExecuted;
         _commands.ComponentCommandExecuted += ComponentCommandExecuted;
     }
-    
+
     private Task ComponentCommandExecuted(ComponentCommandInfo arg1, Discord.IInteractionContext arg2, IResult arg3)
     {
         return Task.CompletedTask;

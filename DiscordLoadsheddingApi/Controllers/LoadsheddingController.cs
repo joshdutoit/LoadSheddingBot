@@ -27,8 +27,8 @@ public class LoadsheddingController : HttpClient
     }
     
     [HttpGet("getschedule")]
-    public async Task<string?> GetSchedule(int suburb, int stage, int province)
+    public List<Schedule> GetSchedule(int zone)
     {
-        return await _eskomService.GetScheduleData(suburb, stage, province);
+        return _eskomService.GetSchedule(zone);
     }
 }

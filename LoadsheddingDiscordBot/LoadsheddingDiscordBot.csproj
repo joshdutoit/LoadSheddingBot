@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="CsvHelper" Version="30.0.1" />
         <PackageReference Include="Discord.Net" Version="3.10.0" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
     </ItemGroup>
@@ -17,6 +18,34 @@
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+      <None Remove="Schedules\city-of-cape-town-area-2.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-2.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-3.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-3.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-4.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-4.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-5.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-5.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-6.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-6.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-8.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-8.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-9.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-9.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-10.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-10.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-11.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-11.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-12.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-12.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-13.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-13.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-14.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-14.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-15.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-15.csv" />
+      <None Remove="Schedules\city-of-cape-town-area-16.csv" />
+      <Content Include="Schedules\city-of-cape-town-area-16.csv" />
     </ItemGroup>
 
     <ItemGroup>

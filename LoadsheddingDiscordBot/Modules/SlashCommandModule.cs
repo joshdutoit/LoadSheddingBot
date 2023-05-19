@@ -1,4 +1,5 @@
-﻿using ClassLibrary;
+﻿using System.Globalization;
+using ClassLibrary;
 using Discord;
 using Discord.Interactions;
 using DiscordLoadsheddingApi.Services;
@@ -9,6 +10,7 @@ namespace LoadsheddingDiscordBot.Modules;
 public class SlashCommandModule : InteractionModuleBase<SocketInteractionContext>
 {
     private EskomService _eskomService = new EskomService();
+    
     #region Commands
 
     [SlashCommand("subscribe", "subscribe to a new zone")]
@@ -25,18 +27,25 @@ public class SlashCommandModule : InteractionModuleBase<SocketInteractionContext
 
         await RespondAsync($"We are currently in {displayValue}");
     }
-
+    
     [SlashCommand("schedule", "checks the current schedule for a given area")]
-    public async Task GetSchedule()
+    public async Task GetSchedule(int zone)
     {
-        var result = _eskomService.GetScheduleData(1058696, 4, 9);
+        var response = _eskomService.GetSchedule(zone);
+        var stageResult = _eskomService.GetLoadSheddingStage().Result;
+        var stageDisplayValue = EnumValue.GetValue(stageResult);
 
-        var embed = new EmbedBuilder()
+        var embed = new EmbedBuilder();
+
+        embed.Description += $"**Today's Schedule for zone {zone} \n {stageDisplayValue}** \n \n";
+        
+        foreach (var item in response)
         {
-            Description = $"{result.Result}"
-        }; 
+            embed.Description += $"\n {item.StartTime.Hour}:{item.StartTime.Minute} - {item.EndTime.Hour}:{item.EndTime.Minute}";
+        }
 
         await RespondAsync(embed: embed.Build());
     }
+    
     #endregion Commands
 }

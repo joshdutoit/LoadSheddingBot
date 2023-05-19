@@ -1,5 +1,7 @@
-﻿using System.Text.Json;
+﻿using System.Globalization;
+using System.Text.Json;
 using ClassLibrary.Models;
+using CsvHelper;
 using RestSharp;
 using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
@@ -62,24 +64,24 @@ public class EskomService
         return new List<SuburbsData>() {};
     }
 
-    public async Task<string?> GetScheduleData(int suburb, int stage, int province)
+    public List<Schedule> GetSchedule(int zone)
     {
-        try
-        {
-            var request = new RestRequest($"/GetScheduleM/{suburb}/{stage}/{province}/1");
-
-            var response = await _client.GetAsync(request);
-
-            if (response.IsSuccessful)
-            {
-                return response.Content;
-            };
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
+        var baseDirectory = Directory.GetCurrentDirectory();
+        var path = "Schedules";
+        var fullPath = Path.Combine(baseDirectory, path, $"city-of-cape-town-area-{zone}.csv");
+        var today = DateTime.Today.Day;
+        var stage = GetLoadSheddingStage().Result;
+        int stageToInt = (int) stage;
         
-        return string.Empty;
+        using (var streamReader = new StreamReader(fullPath))
+        {
+            using (var csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
+            {
+                var fullSchedule = csvReader.GetRecords<Schedule>().ToList();
+
+                var todaySchedules = fullSchedule.Where(x => x.DayOfMonth == today).Where(x => x.Stage == stageToInt).ToList();
+                return todaySchedules;
+            }
+        }
     }
 }
